@@ -20,7 +20,9 @@ worker.start();
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-   <Provider store={store}><App /></Provider>, 
+   <Provider store={store}>
+       <App />
+   </Provider>, 
     rootElement
 );
 
