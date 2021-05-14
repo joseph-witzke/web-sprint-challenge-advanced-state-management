@@ -26,9 +26,13 @@ const reducer = (state = initialState, action) => {
           loading: false
         })
       case(SMURF_ADD):
+        const newSmurf = {
+            ...action.payload,
+            id: Date.now()
+        }
         return({
           ...state,
-          smurf: [...state.smurf, action.payload]
+          smurf: [...state.smurf, newSmurf]
         })
       case(ERROR_ADD):
         return({
