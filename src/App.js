@@ -28,9 +28,15 @@ function App(props) {
       </div>
     );
   }
+  const mapStateToProps = (state) => {
+    return {
+      loading: state.loading,
+      smurfs: state.smurfs,
+      error: state.error
+    }
+  }
 
-
-export default connect(null, { fetchSmurfs })(App);
+export default connect(mapStateToProps, { fetchSmurfs })(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.

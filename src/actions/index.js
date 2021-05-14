@@ -35,11 +35,11 @@ export const fetchFail = (error) => {
 }
 
 export const smurfAdd = (smurf) => {
-    return({SMURF_ADD, payload: smurf})
+    return({type: SMURF_ADD, payload: smurf})
 }
 
 export const errorAdd = (error) => {
-    return({ERROR_ADD, payload: error})
+    return({type: ERROR_ADD, payload: error})
 }
 
 
