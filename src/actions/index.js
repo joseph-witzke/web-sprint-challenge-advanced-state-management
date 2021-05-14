@@ -7,6 +7,20 @@ export const SMURF_ADD = "SMURF_ADD";
 export const ERROR_ADD = "ERROR_ADD";
 
 
+export const fetchSmurfs = () => {
+    return (dispatch => {
+        dispatch(fetchStart());
+        axios.get("http://localhost:3333/smurfs")
+            .then(res => {
+                dispatch(fetchSuccess(res.data))
+            })
+            .catch(error => {
+                dispatch(fetchFail(error));
+            })
+    });
+}
+
+
 
 export const fetchStart = () => {
     return({type: FETCH_START});
